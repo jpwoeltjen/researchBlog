@@ -6,99 +6,13 @@ categories: [efficiency]
 title: Efficient estimation of predictive models using high-frequency high-dimensional data
 
 ---
-# Example Markdown Post
 
-## Basic setup
-
-Jekyll requires blog post files to be named according to the following format:
-
-`YEAR-MONTH-DAY-filename.md`
-
-Where `YEAR` is a four-digit number, `MONTH` and `DAY` are both two-digit numbers, and `filename` is whatever file name you choose, to remind yourself what this post is about. `.md` is the file extension for markdown files.
-
-The first line of the file should start with a single hash character, then a space, then your title. This is how you create a "*level 1 heading*" in markdown. Then you can create level 2, 3, etc headings as you wish but repeating the hash character, such as you see in the line `## File names` above.
-
-## Basic formatting
-
-You can use *italics*, **bold**, `code font text`, and create [links](https://github.com/jpwoeltjen/researchBlog/blob/master/_posts/Thesis.pdf). Here's a footnote [^1]. Here's a horizontal rule:
-
----
-
-## Lists
-
-Here's a list:
-
-- item 1
-- item 2
-
-And a numbered list:
-
-1. item 1
-1. item 2
-
-## Boxes and stuff
-
-> This is a quotation
-
-{% include alert.html text="You can include alert boxes" %}
-
-...and...
-
-{% include info.html text="You can include info boxes" %}
-
-## Images
-
-![]({{ site.baseurl }}/images/logo.png "fast.ai's logo")
-
-## Code
-
-You can format text and code per usual 
-
-General preformatted text:
-
-    # Do a thing
-    do_thing()
-
-Python code and output:
-
-```python
-# Prints '2'
-print(1+1)
-```
-
-    2
-
-Formatting text as shell commands:
-
-```shell
-echo "hello world"
-./some_script.sh --option "value"
-wget https://example.com/cat_photo1.png
-```
-
-Formatting text as YAML:
-
-```yaml
-key: value
-- another_key: "another value"
-```
+My Master's thesis, submitted to the Institute for Statistics and Econometrics of the Christian-Albrechts-Universität zu Kiel, Germany, proposes a method to increase the data efficiency of neural networks for asset return prediction.
 
 
-## Tables
+## Abstract
 
-| Column 1 | Column 2 |
-|-|-|
-| A thing | Another thing |
+In this thesis, the data efficiency of linear and nonlinear regression models of asset return panel data is enhanced by accounting for cross-sectional correlations and longitudinal volatility clusters of residuals. The procedure is motivated by the infeasible generalized least squares estimator. In an extension, a generalized least squares loss function is proposed to efficiently fit nonlinear relationships via deep neural networks. Feasibility is achieved by estimating the unobserved covariance matrix of residuals with a nonparametrically eigenvalue-regularized ensembled pairwise integrated covariance (NER EPIC) matrix estimator applied to high-frequency returns in high dimensions. Monte Carlo evidence confirms efficiency gains for linear and nonlinear conditional expectation models in finite- samples. A study of historical stock market data for the 100 largest US-based stocks shows substantially improved portfolio return characteristics of general- ized models compared to their standard counterparts. A trading strategy based on the predictions of a neural network, minimizing the proposed generalized ob- jective function, generates an out-of-sample information ratio of 2.59. Compared to a model with the same hyperparameters but minimizing the conventional MSE loss function, this represents an improvement of close to 150%.
 
-
-## Tweetcards
-
-{% twitter https://twitter.com/jakevdp/status/1204765621767901185?s=20 %}
-
-
-## Footnotes
-
-
-
-[^1]: This is the footnote.
+Get the thesis [here](https://github.com/jpwoeltjen/researchBlog/blob/master/_posts/Thesis.pdf). 
 
