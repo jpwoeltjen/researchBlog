@@ -1,9 +1,10 @@
 ---
-toc: true
+toc: false
 layout: post
-description: A minimal example of using markdown with fastpages.
-categories: [markdown]
-title: An Example Markdown Post
+description: Data efficiency of linear and nonlinear regression models of asset return panel data is enhanced by accounting for cross-sectional correlations and longitudinal volatility clusters of residuals.
+categories: [efficiency]
+title: Efficient estimation of predictive models using high-frequency high-dimensional data
+
 ---
 # Example Markdown Post
 
@@ -19,7 +20,7 @@ The first line of the file should start with a single hash character, then a spa
 
 ## Basic formatting
 
-You can use *italics*, **bold**, `code font text`, and create [links](https://www.markdownguide.org/cheat-sheet/). Here's a footnote [^1]. Here's a horizontal rule:
+You can use *italics*, **bold**, `code font text`, and create [links](https://github.com/jpwoeltjen/researchBlog/blob/master/_posts/Thesis.pdf). Here's a footnote [^1]. Here's a horizontal rule:
 
 ---
 
