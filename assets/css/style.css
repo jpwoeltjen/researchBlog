@@ -431,8 +431,6 @@ table td { text-overflow: ellipsis; overflow: hidden; max-width: 15em; }
 
 .svg-icon.orange { width: 30px; height: 23px; }
 
-.page__content { text-align: justify; }
-
 /*-----------------------------------*/
 /*----- ADD YOUR STYLES BELOW -------*/
 .language-python + .language-plaintext { border-left: 1px solid grey; margin-left: 1rem !important; }
