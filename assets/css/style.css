@@ -431,6 +431,8 @@ table td { text-overflow: ellipsis; overflow: hidden; max-width: 15em; }
 
 .svg-icon.orange { width: 30px; height: 23px; }
 
+.page__content { text-align: justify; }
+
 /*-----------------------------------*/
 /*----- ADD YOUR STYLES BELOW -------*/
 .language-python + .language-plaintext { border-left: 1px solid grey; margin-left: 1rem !important; }
@@ -483,7 +485,5 @@ table td { text-overflow: ellipsis; overflow: hidden; max-width: 15em; }
 .highlight .m, .highlight .mb, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .mo, .highlight .il { color: #bd93f9; }
 
 .highlight .gd { color: #ff5555; }
-
-.page__content { text-align: justify; }
 
 /*# sourceMappingURL=style.css.map */

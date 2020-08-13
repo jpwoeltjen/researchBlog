@@ -10,13 +10,13 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="(1) compute the value of an option, (2) define hedging strategies that replicate this option, and (3) calibrate a parametric model with observed option prices." />
 <meta property="og:description" content="(1) compute the value of an option, (2) define hedging strategies that replicate this option, and (3) calibrate a parametric model with observed option prices." />
-<link rel="canonical" href="https://jpwoeltjen.github.io/researchBlog/jupyter/2020/08/12/ComputationalFinanceNotes.html" />
-<meta property="og:url" content="https://jpwoeltjen.github.io/researchBlog/jupyter/2020/08/12/ComputationalFinanceNotes.html" />
+<link rel="canonical" href="https://jpwoeltjen.github.io/researchBlog/derivatives/valuation/monte%20carlo/stochastic%20calculus/2020/08/12/ComputationalFinanceNotes.html" />
+<meta property="og:url" content="https://jpwoeltjen.github.io/researchBlog/derivatives/valuation/monte%20carlo/stochastic%20calculus/2020/08/12/ComputationalFinanceNotes.html" />
 <meta property="og:site_name" content="fastpages" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2020-08-12T00:00:00-05:00" />
 <script type="application/ld+json">
-{"headline":"Computational Finance","description":"(1) compute the value of an option, (2) define hedging strategies that replicate this option, and (3) calibrate a parametric model with observed option prices.","datePublished":"2020-08-12T00:00:00-05:00","dateModified":"2020-08-12T00:00:00-05:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://jpwoeltjen.github.io/researchBlog/jupyter/2020/08/12/ComputationalFinanceNotes.html"},"url":"https://jpwoeltjen.github.io/researchBlog/jupyter/2020/08/12/ComputationalFinanceNotes.html","@context":"https://schema.org"}</script>
+{"headline":"Computational Finance","description":"(1) compute the value of an option, (2) define hedging strategies that replicate this option, and (3) calibrate a parametric model with observed option prices.","datePublished":"2020-08-12T00:00:00-05:00","dateModified":"2020-08-12T00:00:00-05:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://jpwoeltjen.github.io/researchBlog/derivatives/valuation/monte%20carlo/stochastic%20calculus/2020/08/12/ComputationalFinanceNotes.html"},"url":"https://jpwoeltjen.github.io/researchBlog/derivatives/valuation/monte%20carlo/stochastic%20calculus/2020/08/12/ComputationalFinanceNotes.html","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/researchBlog/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://jpwoeltjen.github.io/researchBlog/feed.xml" title="fastpages" /><link rel="shortcut icon" type="image/x-icon" href="/researchBlog/images/favicon.ico"><!-- Begin Jekyll SEO tag v2.6.1 -->
 <title>Computational Finance | fastpages</title>
@@ -25,13 +25,13 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="(1) compute the value of an option, (2) define hedging strategies that replicate this option, and (3) calibrate a parametric model with observed option prices." />
 <meta property="og:description" content="(1) compute the value of an option, (2) define hedging strategies that replicate this option, and (3) calibrate a parametric model with observed option prices." />
-<link rel="canonical" href="https://jpwoeltjen.github.io/researchBlog/jupyter/2020/08/12/ComputationalFinanceNotes.html" />
-<meta property="og:url" content="https://jpwoeltjen.github.io/researchBlog/jupyter/2020/08/12/ComputationalFinanceNotes.html" />
+<link rel="canonical" href="https://jpwoeltjen.github.io/researchBlog/derivatives/valuation/monte%20carlo/stochastic%20calculus/2020/08/12/ComputationalFinanceNotes.html" />
+<meta property="og:url" content="https://jpwoeltjen.github.io/researchBlog/derivatives/valuation/monte%20carlo/stochastic%20calculus/2020/08/12/ComputationalFinanceNotes.html" />
 <meta property="og:site_name" content="fastpages" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2020-08-12T00:00:00-05:00" />
 <script type="application/ld+json">
-{"headline":"Computational Finance","description":"(1) compute the value of an option, (2) define hedging strategies that replicate this option, and (3) calibrate a parametric model with observed option prices.","datePublished":"2020-08-12T00:00:00-05:00","dateModified":"2020-08-12T00:00:00-05:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://jpwoeltjen.github.io/researchBlog/jupyter/2020/08/12/ComputationalFinanceNotes.html"},"url":"https://jpwoeltjen.github.io/researchBlog/jupyter/2020/08/12/ComputationalFinanceNotes.html","@context":"https://schema.org"}</script>
+{"headline":"Computational Finance","description":"(1) compute the value of an option, (2) define hedging strategies that replicate this option, and (3) calibrate a parametric model with observed option prices.","datePublished":"2020-08-12T00:00:00-05:00","dateModified":"2020-08-12T00:00:00-05:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://jpwoeltjen.github.io/researchBlog/derivatives/valuation/monte%20carlo/stochastic%20calculus/2020/08/12/ComputationalFinanceNotes.html"},"url":"https://jpwoeltjen.github.io/researchBlog/derivatives/valuation/monte%20carlo/stochastic%20calculus/2020/08/12/ComputationalFinanceNotes.html","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 <link href="https://unpkg.com/@primer/css/dist/primer.css" rel="stylesheet" />
@@ -116,7 +116,16 @@ window.onload = wrap_img;
     
       <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
       
-        <a class="category-tags-link" href="/researchBlog/categories/#jupyter">jupyter</a>
+        <a class="category-tags-link" href="/researchBlog/categories/#derivatives">derivatives</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/researchBlog/categories/#valuation">valuation</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/researchBlog/categories/#monte carlo">monte carlo</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/researchBlog/categories/#stochastic calculus">stochastic calculus</a>
         
       
       </p>
@@ -2757,7 +2766,7 @@ $$ f(x) = \int \rho(z) e^{xz} dz$$
         theme="github-light"
         crossorigin="anonymous"
         async>
-</script><a class="u-url" href="/researchBlog/jupyter/2020/08/12/ComputationalFinanceNotes.html" hidden></a>
+</script><a class="u-url" href="/researchBlog/derivatives/valuation/monte%20carlo/stochastic%20calculus/2020/08/12/ComputationalFinanceNotes.html" hidden></a>
 </article>
       </div>
     </main><footer class="site-footer h-card">
