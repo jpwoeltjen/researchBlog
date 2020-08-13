@@ -341,7 +341,7 @@ img.emoji { display: inline !important; vertical-align: baseline !important; }
 
 .page-content { -webkit-font-smoothing: antialiased !important; text-rendering: optimizeLegibility !important; font-family: "Segoe UI", SegoeUI, Roboto, "Segoe WP", "Helvetica Neue", "Helvetica", "Tahoma", "Arial", sans-serif !important; }
 
-.post-content p, .post-content li { font-size: 20px; color: #515151; }
+.post-content p, .post-content li { color: #515151; }
 
 .post-link { font-weight: normal; }
 
@@ -483,5 +483,7 @@ table td { text-overflow: ellipsis; overflow: hidden; max-width: 15em; }
 .highlight .m, .highlight .mb, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .mo, .highlight .il { color: #bd93f9; }
 
 .highlight .gd { color: #ff5555; }
+
+.page__content { text-align: justify; }
 
 /*# sourceMappingURL=style.css.map */
