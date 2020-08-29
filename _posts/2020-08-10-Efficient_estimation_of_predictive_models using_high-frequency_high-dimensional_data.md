@@ -2,7 +2,7 @@
 toc: false
 layout: post
 description: Data efficiency of linear and nonlinear regression models of asset return panel data is enhanced by accounting for cross-sectional correlations and longitudinal volatility clusters of residuals.
-categories: [efficiency]
+categories: [efficiency, deep-learning, time series, panel]
 title: Efficient estimation of predictive models using high-frequency high-dimensional data
 
 ---
