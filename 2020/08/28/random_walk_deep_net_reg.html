@@ -4,9 +4,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="twitter:card" content="summary" /><!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>Modeling Nonstationary Data with an Adaptive Bayesian Neural Network Based on Random Walk Priors | Research</title>
+<title>Adaptive Bayesian Neural Network Based on Random Walk Priors | Research</title>
 <meta name="generator" content="Jekyll v4.0.0" />
-<meta property="og:title" content="Modeling Nonstationary Data with an Adaptive Bayesian Neural Network Based on Random Walk Priors" />
+<meta property="og:title" content="Adaptive Bayesian Neural Network Based on Random Walk Priors" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Research log of Jan P. Woeltjen." />
 <meta property="og:description" content="Research log of Jan P. Woeltjen." />
@@ -16,12 +16,12 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2020-08-28T00:00:00-05:00" />
 <script type="application/ld+json">
-{"description":"Research log of Jan P. Woeltjen.","@type":"BlogPosting","headline":"Modeling Nonstationary Data with an Adaptive Bayesian Neural Network Based on Random Walk Priors","url":"https://jpwoeltjen.github.io/researchBlog/2020/08/28/random_walk_deep_net_reg.html","datePublished":"2020-08-28T00:00:00-05:00","dateModified":"2020-08-28T00:00:00-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://jpwoeltjen.github.io/researchBlog/2020/08/28/random_walk_deep_net_reg.html"},"@context":"https://schema.org"}</script>
+{"description":"Research log of Jan P. Woeltjen.","@type":"BlogPosting","headline":"Adaptive Bayesian Neural Network Based on Random Walk Priors","url":"https://jpwoeltjen.github.io/researchBlog/2020/08/28/random_walk_deep_net_reg.html","datePublished":"2020-08-28T00:00:00-05:00","dateModified":"2020-08-28T00:00:00-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://jpwoeltjen.github.io/researchBlog/2020/08/28/random_walk_deep_net_reg.html"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/researchBlog/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://jpwoeltjen.github.io/researchBlog/feed.xml" title="Research" /><link rel="shortcut icon" type="image/x-icon" href="/researchBlog/images/favicon.ico"><!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>Modeling Nonstationary Data with an Adaptive Bayesian Neural Network Based on Random Walk Priors | Research</title>
+<title>Adaptive Bayesian Neural Network Based on Random Walk Priors | Research</title>
 <meta name="generator" content="Jekyll v4.0.0" />
-<meta property="og:title" content="Modeling Nonstationary Data with an Adaptive Bayesian Neural Network Based on Random Walk Priors" />
+<meta property="og:title" content="Adaptive Bayesian Neural Network Based on Random Walk Priors" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Research log of Jan P. Woeltjen." />
 <meta property="og:description" content="Research log of Jan P. Woeltjen." />
@@ -31,7 +31,7 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2020-08-28T00:00:00-05:00" />
 <script type="application/ld+json">
-{"description":"Research log of Jan P. Woeltjen.","@type":"BlogPosting","headline":"Modeling Nonstationary Data with an Adaptive Bayesian Neural Network Based on Random Walk Priors","url":"https://jpwoeltjen.github.io/researchBlog/2020/08/28/random_walk_deep_net_reg.html","datePublished":"2020-08-28T00:00:00-05:00","dateModified":"2020-08-28T00:00:00-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://jpwoeltjen.github.io/researchBlog/2020/08/28/random_walk_deep_net_reg.html"},"@context":"https://schema.org"}</script>
+{"description":"Research log of Jan P. Woeltjen.","@type":"BlogPosting","headline":"Adaptive Bayesian Neural Network Based on Random Walk Priors","url":"https://jpwoeltjen.github.io/researchBlog/2020/08/28/random_walk_deep_net_reg.html","datePublished":"2020-08-28T00:00:00-05:00","dateModified":"2020-08-28T00:00:00-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://jpwoeltjen.github.io/researchBlog/2020/08/28/random_walk_deep_net_reg.html"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 <link href="https://unpkg.com/@primer/css/dist/primer.css" rel="stylesheet" />
@@ -103,7 +103,7 @@ window.onload = wrap_img;
         <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">Modeling Nonstationary Data with an Adaptive Bayesian Neural Network Based on Random Walk Priors</h1><p class="post-meta post-meta-title"><time class="dt-published" datetime="2020-08-28T00:00:00-05:00" itemprop="datePublished">
+    <h1 class="post-title p-name" itemprop="name headline">Adaptive Bayesian Neural Network Based on Random Walk Priors</h1><p class="post-meta post-meta-title"><time class="dt-published" datetime="2020-08-28T00:00:00-05:00" itemprop="datePublished">
         Aug 28, 2020
       </time>
        • <span class="read-time" title="Estimated read time">
@@ -163,7 +163,7 @@ window.onload = wrap_img;
 <ul>
 <li>toc:true - badges: true</li>
 <li>comments: true</li>
-<li>categories: [efficiency, time-series, deep-learning]</li>
+<li>categories: [efficiency, time series, deep learning]</li>
 </ul>
 
 </div>
@@ -202,9 +202,8 @@ $$
 $$<p>In order to avoid overfitting, $\mathbf{\Theta}_t$ needs to be constrained. We will assume that while $\mathbf{\Theta}_t$ is changing over time, it will do so rather gradually by placing a random-walk prior on it:</p>
 $$
 \mathbf{\Theta}_t \sim \mathcal{N}(\mathbf{\Theta}_{t-1}, \mathbf{\Sigma})
-$$<p>So $\mathbf{\Theta}_t$ is allowed to only deviate a little bit (determined by the step-width $s$) from its previous value $\mathbf{\Theta}_{t-1}$. $s$ can be thought of as a stability parameter -- how fast is the world around you changing.</p>
-<p><a href="https://twitter.com/twiecki">Thomas Wiecki</a> proposed an adaptive classifier.</p>
-<p>The idea detailed below is strongly influenced by his blog post: <a href="https://github.com/twiecki/WhileMyMCMCGentlySamples/blob/master/content/downloads/notebooks/random_walk_deep_net.ipynb">https://github.com/twiecki/WhileMyMCMCGentlySamples/blob/master/content/downloads/notebooks/random_walk_deep_net.ipynb</a>
+$$<p>So $\mathbf{\Theta}_t$ is allowed to only deviate a little bit (determined by the step size $\mathbf{\Sigma}$) from its previous value $\mathbf{\Theta}_{t-1}$. $\mathbf{\Sigma}$ can be thought of as a stability parameter. Larger values imply a quickly changing relationship, whereas smaller values imply a slowly changing relationship.</p>
+<p>This idea is based on an adaptive classifier proposed by <a href="https://twitter.com/twiecki">Thomas Wiecki</a>. For more details, refer to his excellent blog post: <a href="https://github.com/twiecki/WhileMyMCMCGentlySamples/blob/master/content/downloads/notebooks/random_walk_deep_net.ipynb">https://github.com/twiecki/WhileMyMCMCGentlySamples/blob/master/content/downloads/notebooks/random_walk_deep_net.ipynb</a>
 .</p>
 
 </div>
