@@ -12,3 +12,5 @@ _notebooks/.ipynb_checkpoints
 .tweet-cache
 __pycache__
 .DS_Store
+
+2020-08-28-adaptive_bayesian_neural_network_with_stochastic_volatility.ipynb
