@@ -1,9 +1,9 @@
 ---  
 toc: false  
 layout: post  
-description: Challenges of machine learning applied to financial data.  
+description: Outlining challenges and their solution of machine learning applied to financial data.  
 categories: [efficiency, deep learning, time series, panel, nonstationarity, heteroskedastisity, hierarchical, Bayesian,]  
-title: Outlining challenges in financial machine learning and their solution.
+title: Challenges in Financial Machine Learning .
 ---  
   
 Why is machine learning applied to financial data hard? What are the main differences of financial data compared to datasets where machine learning techniques work well.
