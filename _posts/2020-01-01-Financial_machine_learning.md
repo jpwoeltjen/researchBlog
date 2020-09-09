@@ -21,7 +21,7 @@ Why is machine learning applied to financial data hard? What are the main differ
    - Financial markets are dynamic; old patterns are arbitraged away and new patterns emerge.  
    - The optimal weights of neural networks change smoothly over time  (there might also be sudden shocks).  
    - Layers close to the input are more stable while layers closer to the output must adapt quickly to new market dynamics.
-   - https://jpwoeltjen.github.io/researchBlog/efficiency/time%20series/deep%20learning/2020/08/28/random_walk_deep_net_reg.html
+   - <https://jpwoeltjen.github.io/researchBlog/efficiency/time%20series/deep%20learning/2020/08/28/random_walk_deep_net_reg.html>
   
 3. Hierarchical structure  
    - Each asset/sector can have different weights (esp. in the last layer).
@@ -35,7 +35,7 @@ Why is machine learning applied to financial data hard? What are the main differ
    - Assets are correlated.  
    - Volatility is stochastic and autoregressive. 
    - Improve data efficiency of conditional expectation models by accounting for it.
-	    - https://jpwoeltjen.github.io/researchBlog/efficiency/deep%20learning/time%20series/panel/2020/08/10/Efficient_estimation_of_predictive_models-using_high-frequency_high-dimensional_data.html
+	    - <https://jpwoeltjen.github.io/researchBlog/efficiency/deep%20learning/time%20series/panel/2020/08/10/Efficient_estimation_of_predictive_models-using_high-frequency_high-dimensional_data.html>
    - For forecasting: Use stochastic volatility models or multivariate GARCH models.
        - Condition on events.
   
