@@ -1,0 +1,94 @@
+
+<hr />
+<p>toc: false<br />
+layout: post<br />
+description: Challenges of machine learning applied to financial data.<br />
+categories: [efficiency, deep learning, time series, panel, nonstationarity, heteroskedastisity, hierarchical, Bayesian,]<br />
+title: Challenges in financial machine learning
+—</p>
+
+<p>Why is machine learning applied to financial data hard? What are the main differences of financial data compared to datasets where machine learning techniques work well.</p>
+
+<h2 id="panel-model">Panel model</h2>
+<ul>
+  <li>$p$ assets.</li>
+  <li>$n$ time steps.</li>
+</ul>
+
+<ol>
+  <li>Nonlinearity of conditional expectation
+    <ul>
+      <li>Deep neural network</li>
+    </ul>
+  </li>
+  <li>Nonstationarity of conditional expectation
+    <ul>
+      <li>Financial markets are dynamic; old patterns are arbitraged away and new patterns emerge.</li>
+      <li>The optimal weights of neural networks change smoothly over time  (there might also be sudden shocks).</li>
+      <li>Layers close to the input are more stable while layers closer to the output must adapt quickly to new market dynamics.</li>
+      <li>https://jpwoeltjen.github.io/researchBlog/efficiency/time%20series/deep%20learning/2020/08/28/random_walk_deep_net_reg.html</li>
+    </ul>
+  </li>
+  <li>Hierarchical structure
+    <ul>
+      <li>Each asset/sector can have different weights (esp. in the last layer).</li>
+      <li>But there is dependence.</li>
+      <li>Even though the absolute amount of data is big when pooled. Data is limited relative to model complexity.</li>
+      <li>Use covariance matrix as measure of similarity.</li>
+      <li>Dirichlet process
+        <ul>
+          <li>Allows for infinite clusters but promotes sparsity.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>High noise component with cross-sectional correlation and longitudinal volatility clusters.
+    <ul>
+      <li>Assets are correlated.</li>
+      <li>Volatility is stochastic and autoregressive.</li>
+      <li>Improve data efficiency of conditional expectation models by accounting for it.
+        <ul>
+          <li>https://jpwoeltjen.github.io/researchBlog/efficiency/deep%20learning/time%20series/panel/2020/08/10/Efficient_estimation_of_predictive_models-using_high-frequency_high-dimensional_data.html</li>
+        </ul>
+      </li>
+      <li>For forecasting: Use stochastic volatility models or multivariate GARCH models.
+        <ul>
+          <li>Condition on events.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>The dimensionality of the covariance matrix is high.
+    <ul>
+      <li>The number of assets is large relative to the sample size.</li>
+      <li>Hence sample eigenvalues are over-dispersed and the sample covariance matrix is ill-conditioned.</li>
+    </ul>
+  </li>
+  <li>Prices are observed irregularly and with noise at high frequency.
+    <ul>
+      <li>Intraday prices contain microstructure noise and are observed non-synchronously across assets.</li>
+      <li>https://hfhd.readthedocs.io/</li>
+    </ul>
+  </li>
+  <li>Estimates of uncertainty is important.
+    <ul>
+      <li>Bayesian framework allows for uncertainty estimates.</li>
+      <li>A decision is always better if one accounts for uncertainty.</li>
+      <li>Main portfolio optimization result is Markowitz:
+        <ul>
+          <li>optimal weights depend on mean and variance of returns.</li>
+          <li>assumes first two moments are known.</li>
+          <li>when estimates are used instead, need to account for epistemic uncertainty of estimates as well
+            <ul>
+              <li>Aleatoric uncertainty: noise inherent in the observations. (i.e. variance of returns)</li>
+              <li>Epistemic uncertainty accounts for uncertainty in the model – uncertainty which can be explained away given enough data. (i.e. variance of mean and variance estimates)</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ol>
+
+<p>2 and 3: Each point in asset-time has different weights, but there is dependence between them. Weights change smoothly over time and weights of similar stocks are themself similar. A stock is similar to another if it operates in the same industry. A company can have several arms, though. A stock can be correlated to many other stocks, the covariance matrix is the right object to encode this similarity.</p>
+
