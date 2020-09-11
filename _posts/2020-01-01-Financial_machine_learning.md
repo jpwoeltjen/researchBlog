@@ -3,7 +3,7 @@ toc: false
 layout: post  
 description: Outlining challenges and their solution of machine learning applied to financial data.  
 categories: [efficiency, deep learning, time series, panel, nonstationarity, heteroskedastisity, hierarchical, Bayesian,]  
-title: Challenges in Financial Machine Learning .
+title: Challenges in Financial Machine Learning
 ---  
   
 Why is machine learning applied to financial data hard? What are the main differences of financial data compared to datasets where machine learning techniques work well.
@@ -30,6 +30,7 @@ Why is machine learning applied to financial data hard? What are the main differ
    - Use covariance matrix as measure of similarity.  
    - Dirichlet process  
 		- Allows for infinite clusters but promotes sparsity.  
+   - Alternatively, use asset type encoding (loadings on sector, industry, risk factors) as feature in a standard net.
   
 4. High noise component with cross-sectional correlation and longitudinal volatility clusters.
    - Assets are correlated.  
@@ -56,8 +57,13 @@ Why is machine learning applied to financial data hard? What are the main differ
         - when estimates are used instead, need to account for epistemic uncertainty of estimates as well  
           - Aleatoric uncertainty: noise inherent in the observations. (i.e. variance of returns)  
           - Epistemic uncertainty accounts for uncertainty in the model -- uncertainty which can be explained away given enough data. (i.e. variance of mean and variance estimates)
+
+8. Time series features.
+	- Recurrent neural networks (LSTM, GRU)
+	- Transformers adapted to time series.
+	
    
-2 and 3: Each point in asset-time has different weights, but there is dependence between them. Weights change smoothly over time and weights of similar stocks are themself similar. A stock is similar to another if it operates in the same industry. A company can have several arms, though. A stock can be correlated to many other stocks, the covariance matrix is the right object to encode this similarity.    
+2 and 3: Each point in asset-time has different weights, but there is dependence between them. Weights change smoothly over time and weights of similar stocks are themself similar. A stock is similar to another, e.g., if it operates in the same industry. A company can have several arms, though. A stock can be correlated to many other stocks, the covariance matrix is the right object to encode this similarity.    
 
   
 
