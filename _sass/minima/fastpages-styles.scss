@@ -59,7 +59,7 @@ h1, h2, h3, h4 {
     font-weight: normal !important;
     margin-bottom:0.5rem !important;  
     code {
-      font-size: 100%;
+      font-size: 50%;
     }
 }
 
@@ -140,26 +140,26 @@ h6:hover .anchor-link {
 .category-tags {
   margin-top: .25rem !important;
   margin-bottom: .25rem !important;
-//  font-size: 105%;
+  font-size: 50%;
 }
 
 // Custom styling for homepage post previews
 .post-meta-title, .post-meta{
   margin-top: .25em !important;
   margin-bottom: .25em !important;
-//  font-size: 105%;
+  font-size: 50%;
 }
 
 .page-description {
   margin-top: .5rem !important;
   margin-bottom: .5rem !important;
   color: #585858;
-//  font-size: 115%;
+  font-size: 50%;
 }
 
 // Custom styling for category tags
 .category-tags-icon {
-  font-size: 75% !important;
+  font-size: 50% !important;
   padding-left: 0.375em;
   opacity: 35%;
 }
@@ -202,7 +202,7 @@ table {
   display: block !important;
   overflow-x: auto;
   white-space: nowrap;
-  font-size: 75%;
+  font-size: 50%;
   border:none;
   th{
     text-align: center! important;
