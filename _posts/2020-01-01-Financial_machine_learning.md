@@ -2,7 +2,7 @@
 toc: false  
 layout: post  
 description: Outlining challenges and their solution of machine learning applied to financial data.  
-categories: [efficiency, deep learning, time series, panel, nonstationarity, heteroskedastisity, hierarchical, Bayesian,]  
+categories: [efficiency, deep learning, time series, panel, nonstationarity, heteroskedastisity, hierarchical, bayesian,]  
 title: Challenges in Financial Machine Learning
 ---  
   
@@ -57,6 +57,7 @@ Why is machine learning applied to financial data hard? What are the main differ
         - when estimates are used instead, need to account for epistemic uncertainty of estimates as well  
           - Aleatoric uncertainty: noise inherent in the observations. (i.e. variance of returns)  
           - Epistemic uncertainty accounts for uncertainty in the model -- uncertainty which can be explained away given enough data. (i.e. variance of mean and variance estimates)
+          - https://jpwoeltjen.github.io/researchBlog/probabilistic%20programming/bayesian/portfolio%20optimization/2020/10/01/_10_01_bayesian_porfolio_optimization.html
 
 8. Time series features.
 	- Recurrent neural networks (LSTM, GRU)
