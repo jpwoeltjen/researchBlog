@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
+<loc>https://jpwoeltjen.github.io/researchBlog/2019/01/01/Mandelbrot.html</loc>
+<lastmod>2019-01-01T00:00:00-06:00</lastmod>
+</url>
+<url>
 <loc>https://jpwoeltjen.github.io/researchBlog/derivatives/valuation/monte%20carlo/stochastic%20calculus/2019/01/03/ComputationalFinanceNotes.html</loc>
 <lastmod>2019-01-03T00:00:00-06:00</lastmod>
 </url>
@@ -25,15 +29,15 @@
 <lastmod>2020-08-10T00:00:00-05:00</lastmod>
 </url>
 <url>
+<loc>https://jpwoeltjen.github.io/researchBlog/efficiency/hierarchical/deep%20learning/probabilistic%20programming/bayesian/panel/2020/08/28/hierarchical_bayesian_neural_network.html</loc>
+<lastmod>2020-08-28T00:00:00-05:00</lastmod>
+</url>
+<url>
 <loc>https://jpwoeltjen.github.io/researchBlog/efficiency/time%20series/deep%20learning/2020/08/28/random_walk_deep_net_reg.html</loc>
 <lastmod>2020-08-28T00:00:00-05:00</lastmod>
 </url>
 <url>
-<loc>https://jpwoeltjen.github.io/researchBlog/efficiency/hierarchical/deep%20learning/probabilistic%20programming/bayesian/panel/2020/10/01/_08_28_hierarchical_bayesian_neural_network.html</loc>
-<lastmod>2020-10-01T00:00:00-05:00</lastmod>
-</url>
-<url>
-<loc>https://jpwoeltjen.github.io/researchBlog/probabilistic%20programming/bayesian/portfolio%20optimization/2020/10/01/_10_01_bayesian_porfolio_optimization.html</loc>
+<loc>https://jpwoeltjen.github.io/researchBlog/probabilistic%20programming/bayesian/portfolio%20optimization/2020/10/01/bayesian_porfolio_optimization.html</loc>
 <lastmod>2020-10-01T00:00:00-05:00</lastmod>
 </url>
 <url>
