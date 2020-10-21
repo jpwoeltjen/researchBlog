@@ -37,8 +37,9 @@ Why is machine learning applied to financial data hard? What are the main differ
    - Volatility is stochastic and autoregressive. 
    - Improve data efficiency of conditional expectation models by accounting for it.
 	    - <https://jpwoeltjen.github.io/researchBlog/efficiency/deep%20learning/time%20series/panel/2020/08/10/Efficient_estimation_of_predictive_models-using_high-frequency_high-dimensional_data.html>
+   - In a Bayesian setting, compute the daily integrated covariance matrix with high-frequency data and use the Kalman smoother to get a better estimate (this is more principled and Bayesian than the adhoc moving average I used in the thesis). Then use this estimator as the covariance matrix model of the multivariate (Gaussian) likelihood function of the p dimensional asset returns. (Remember: The covariance matrix estimate may use future data in the training phase.)
    - For forecasting: Use stochastic volatility models or multivariate GARCH models.
-       - Condition on events.
+       - Condition on events (earnings announcements, news, etc.)
   
 5. The dimensionality of the covariance matrix is high.  
    - The number of assets is large relative to the sample size.  
