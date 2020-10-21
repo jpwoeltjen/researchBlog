@@ -191,9 +191,10 @@ window.onload = wrap_img;
           <li><a href="https://jpwoeltjen.github.io/researchBlog/efficiency/deep%20learning/time%20series/panel/2020/08/10/Efficient_estimation_of_predictive_models-using_high-frequency_high-dimensional_data.html">https://jpwoeltjen.github.io/researchBlog/efficiency/deep%20learning/time%20series/panel/2020/08/10/Efficient_estimation_of_predictive_models-using_high-frequency_high-dimensional_data.html</a></li>
         </ul>
       </li>
+      <li>In a Bayesian setting, compute the daily integrated covariance matrix with high-frequency data and use the Kalman smoother to get a better estimate (this is more principled and Bayesian than the adhoc moving average I used in the thesis). Then use this estimator as the covariance matrix model of the multivariate (Gaussian) likelihood function of the p dimensional asset returns. (Remember: The covariance matrix estimate may use future data in the training phase.)</li>
       <li>For forecasting: Use stochastic volatility models or multivariate GARCH models.
         <ul>
-          <li>Condition on events.</li>
+          <li>Condition on events (earnings announcements, news, etc.)</li>
         </ul>
       </li>
     </ul>
