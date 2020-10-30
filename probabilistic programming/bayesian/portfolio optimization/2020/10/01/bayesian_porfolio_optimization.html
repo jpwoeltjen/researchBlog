@@ -183,7 +183,11 @@ window.onload = wrap_img;
 <p>The Bayesian framework accounts for full uncertainty:</p>
 <ul>
 <li>Aleatoric uncertainty: inherent variance of returns.</li>
-<li>Epistemic uncertainty: parameter uncertainty due to limited data (at every step).</li>
+<li>Epistemic uncertainty: parameter uncertainty due to limited data (at every step).<ul>
+<li>Natural adjustment for parameter uncertainty of different assets (due to unequal amounts of data or otherwise weaker evidence).</li>
+<li>Natural downscaling of allocation when new data point is far away from training data (data anomaly, financial crises, regime shift).</li>
+</ul>
+</li>
 </ul>
 </li>
 <li>
