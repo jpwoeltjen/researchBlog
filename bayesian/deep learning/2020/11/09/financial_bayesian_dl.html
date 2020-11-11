@@ -155,7 +155,7 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h1"><a href="#Better-generalization">Better generalization </a>
 <ul>
 <li class="toc-entry toc-h2"><a href="#Architecture-selection">Architecture selection </a></li>
-<li class="toc-entry toc-h2"><a href="#Model-comparison-and-ensembling-with-Bayesian-Occam's">Model comparison and ensembling with Bayesian Occam&#39;s </a></li>
+<li class="toc-entry toc-h2"><a href="#Model-comparison-and-ensembling">Model comparison and ensembling </a></li>
 <li class="toc-entry toc-h2"><a href="#Bayesian-weight-decay-and-automatic-relevance-determination">Bayesian weight decay and automatic relevance determination </a></li>
 </ul>
 </li>
@@ -300,15 +300,15 @@ subject to $\boldsymbol{\omega}^{\prime} \mathbf{1}=1$.</li>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Model-comparison-and-ensembling-with-Bayesian-Occam's">
-<a class="anchor" href="#Model-comparison-and-ensembling-with-Bayesian-Occam's" aria-hidden="true"><span class="octicon octicon-link"></span></a>Model comparison and ensembling with Bayesian Occam's<a class="anchor-link" href="#Model-comparison-and-ensembling-with-Bayesian-Occam's"> </a>
+<h2 id="Model-comparison-and-ensembling">
+<a class="anchor" href="#Model-comparison-and-ensembling" aria-hidden="true"><span class="octicon octicon-link"></span></a>Model comparison and ensembling<a class="anchor-link" href="#Model-comparison-and-ensembling"> </a>
 </h2>
 <ul>
 <li>The “Bayesian way” to compare models is to compute the marginal likelihood of each model $p\left(y \mid \mathcal{M}_{k}\right),$ i.e. the probability of the observed data $y$ given the model $\mathcal{M}_{k}$.</li>
 <li>Then by Bayes' theorem: $p\left(\mathcal{M}_{k} \mid y\right) \propto p\left(y \mid \mathcal{M}_{k}\right) p\left(\mathcal{M}_{k}\right)$</li>
 <li>Bayesian factor compares two models with equal model priors and cancels the intractable evidence term $B F=\frac{p\left(y \mid \mathcal{M}_{0}\right)}{p\left(y \mid \mathcal{M}_{1}\right)}$</li>
 <li>Bayesian model averaging doesn't select single model but computes average weighted with each model's <em>marginal posterior</em>: $$p(\theta \mid y)=\sum_{k=1}^{K} p\left(\theta \mid y, \mathcal{M}_{k}\right) p\left(\mathcal{M}_{k} \mid y\right)$$</li>
-<li>Bayesian Occam's : the more parameters (with positive probability), the more the prior is spread over parameters (remember: it must integrate to 1) and the more unlikely the model becomes.</li>
+<li>Bayesian Occam's razor: the more parameters (with positive probability), the more the prior is spread over parameters (remember: it must integrate to 1) and the more unlikely the model becomes.</li>
 <li>
 <p>Problem: very sensitive to prior and hard to compute.</p>
 </li>

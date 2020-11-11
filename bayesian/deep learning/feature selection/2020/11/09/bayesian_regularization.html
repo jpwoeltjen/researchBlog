@@ -155,11 +155,11 @@ window.onload = wrap_img;
   <div class="post-content e-content" itemprop="articleBody">
     <ul class="section-nav">
 <li class="toc-entry toc-h1"><a href="#Noisy-data-with-lots-of-irrelevant-features">Noisy data with lots of irrelevant features </a></li>
-<li class="toc-entry toc-h1"><a href="#Deep-Enembles-with-PyTorch">Deep Enembles with PyTorch </a></li>
+<li class="toc-entry toc-h1"><a href="#Deep-enembles-with-PyTorch">Deep enembles with PyTorch </a></li>
 <li class="toc-entry toc-h1"><a href="#Numpyro">Numpyro </a>
 <ul>
-<li class="toc-entry toc-h2"><a href="#Standard-Bayesian-Neural-Network-via-NUTS">Standard Bayesian Neural Network via NUTS </a></li>
-<li class="toc-entry toc-h2"><a href="#Bayesian-Neural-Network-with-automatic-relevance-determination-via-NUTS">Bayesian Neural Network with automatic relevance determination via NUTS </a></li>
+<li class="toc-entry toc-h2"><a href="#Standard-Bayesian-neural-network-via-NUTS">Standard Bayesian neural network via NUTS </a></li>
+<li class="toc-entry toc-h2"><a href="#Bayesian-neural-network-with-automatic-relevance-determination-via-NUTS">Bayesian neural network with automatic relevance determination via NUTS </a></li>
 </ul>
 </li>
 <li class="toc-entry toc-h1"><a href="#Conclusion">Conclusion </a></li>
@@ -211,7 +211,7 @@ window.onload = wrap_img;
 <li>observation noise</li>
 <li>non-linear</li>
 </ul>
-<p>These data will be predicted via 3 different models. First, a deep ensemble is fitted with $\ell_1$ and $\ell_2$ regularization. Then a Bayesian neural network with Gaussian priors is tried. Finally, a Bayesian neural network with Gaussian priors and automatic relevance determination is shown to substatially improve generalization. This is achieved via Inverse-Gamma priors on the feature-specific variance of the Gaussian weight priors.</p>
+<p>These data will be predicted via 3 different models. First, a deep ensemble is fitted with $\ell_1$ and $\ell_2$ regularization. Then a Bayesian neural network with Gaussian priors is tried. Finally, a Bayesian neural network with Gaussian priors and automatic relevance determination is shown to substatially improve generalization. This is achieved via inverse-gamma priors on the feature-specific variance of the Gaussian weight priors.</p>
 
 </div>
 </div>
@@ -353,8 +353,8 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Deep-Enembles-with-PyTorch">
-<a class="anchor" href="#Deep-Enembles-with-PyTorch" aria-hidden="true"><span class="octicon octicon-link"></span></a>Deep Enembles with PyTorch<a class="anchor-link" href="#Deep-Enembles-with-PyTorch"> </a>
+<h1 id="Deep-enembles-with-PyTorch">
+<a class="anchor" href="#Deep-enembles-with-PyTorch" aria-hidden="true"><span class="octicon octicon-link"></span></a>Deep enembles with PyTorch<a class="anchor-link" href="#Deep-enembles-with-PyTorch"> </a>
 </h1>
 </div>
 </div>
@@ -749,8 +749,8 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Standard-Bayesian-Neural-Network-via-NUTS">
-<a class="anchor" href="#Standard-Bayesian-Neural-Network-via-NUTS" aria-hidden="true"><span class="octicon octicon-link"></span></a>Standard Bayesian Neural Network via NUTS<a class="anchor-link" href="#Standard-Bayesian-Neural-Network-via-NUTS"> </a>
+<h2 id="Standard-Bayesian-neural-network-via-NUTS">
+<a class="anchor" href="#Standard-Bayesian-neural-network-via-NUTS" aria-hidden="true"><span class="octicon octicon-link"></span></a>Standard Bayesian neural network via NUTS<a class="anchor-link" href="#Standard-Bayesian-neural-network-via-NUTS"> </a>
 </h2>
 </div>
 </div>
@@ -1398,8 +1398,8 @@ MCMC elapsed time: 1018.3158366680145
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Bayesian-Neural-Network-with-automatic-relevance-determination-via-NUTS">
-<a class="anchor" href="#Bayesian-Neural-Network-with-automatic-relevance-determination-via-NUTS" aria-hidden="true"><span class="octicon octicon-link"></span></a>Bayesian Neural Network with automatic relevance determination via NUTS<a class="anchor-link" href="#Bayesian-Neural-Network-with-automatic-relevance-determination-via-NUTS"> </a>
+<h2 id="Bayesian-neural-network-with-automatic-relevance-determination-via-NUTS">
+<a class="anchor" href="#Bayesian-neural-network-with-automatic-relevance-determination-via-NUTS" aria-hidden="true"><span class="octicon octicon-link"></span></a>Bayesian neural network with automatic relevance determination via NUTS<a class="anchor-link" href="#Bayesian-neural-network-with-automatic-relevance-determination-via-NUTS"> </a>
 </h2>
 </div>
 </div>
@@ -2157,7 +2157,7 @@ MCMC elapsed time: 1026.5278742313385
 <h1 id="Conclusion">
 <a class="anchor" href="#Conclusion" aria-hidden="true"><span class="octicon octicon-link"></span></a>Conclusion<a class="anchor-link" href="#Conclusion"> </a>
 </h1>
-<p>Letting the model turn-off input-layer weights by putting an Inverse-Gamma prior on their variance significantly improves generalization.</p>
+<p>Letting the model turn-off input-layer weights by putting an inverse-gamma prior on their variance significantly improves generalization.</p>
 
 </div>
 </div>
