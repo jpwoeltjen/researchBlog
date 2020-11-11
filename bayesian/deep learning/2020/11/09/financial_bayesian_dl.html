@@ -109,7 +109,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      3 min read
+      4 min read
     
 </span></p>
 
@@ -181,10 +181,20 @@ window.onload = wrap_img;
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>We want to estimate the posterior predictive distribution of asset returns $y$ given features $x$ and training data $\mathcal{D}$ $$p(y \mid x, \mathcal{D})=\int p(y \mid x, w) p(w \mid \mathcal{D}) d w.$$</p>
-<p>In the Bayesian framework, we use probability theory to reason about models. We are honest about the uncertainty we have about the models and their parameters and avoid picking any single one. Instead, we ensemble models and parameters, weighting by their posterior probability distribution -- <strong>marginalization instead of optimization</strong>. In stark contrast to frequentists’ methods, the posterior is the only estimator Bayesians have. It is given by Bayes' Theorem:</p>
+<p>In the Bayesian framework, we use probability theory to reason about models. We are honest about the uncertainty we have about the models and their parameters and avoid picking any single one. Instead, we ensemble models and parameters, weighting by their posterior probability distribution -- <em>marginalization instead of optimization</em>. The posterior is given by Bayes' Theorem:</p>
 <p>
 $$p\left(w \mid \mathcal{D} \right)=\frac{p\left(\mathcal{D} \mid w\right) p(w)}{\int p\left(\mathcal{D} \mid w\right) p(\theta) d \theta}.$$
 </p>
+<p>There are several different ways to compute or approximate this posterior. The Bayesian framework is much more than any specific algorithm, though. Its distinguishing feature is the use of <em>probability distributions instead of point estimates</em>. Any model can be viewed through a Bayesian lens.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In the case of infinite iid data, Bayesian and frequentist methods yield the same result. Then the posterior is the Dirac delta function with infinite density at the maximum likelihood estimate. The number of observations may be a misleading measure to assess whether one is 'near' this ideal case. It is important to distinguish tall and wide data regimes. In a tall data regime, we have lots of independent training examples from the same distribution. Wide data regimes, on the other hand, may also have many training examples but they are not independent of each other and require a more complex model.</p>
+<p>Financial data is exceptionally noisy and structurally complex. In addition, uncertainty estimates are critically important for the decision-making process. These are exactly the conditions where a Bayesian framework is most advantageous. In the following, I’ll detail some of the advantages a Bayesian framework brings to the modeling of financial data.</p>
 
 </div>
 </div>
@@ -208,9 +218,10 @@ $$p\left(w \mid \mathcal{D} \right)=\frac{p\left(\mathcal{D} \mid w\right) p(w)}
 <li>Instead, use the empirical mean and variance of the posterior predictive distribution.</li>
 <li>Even more generally, maximize utility:
 $\max _{\omega} \mathrm{E}\left[U\left(\boldsymbol{\omega}^{\prime} \mathbf{r}_{T+1}\right)\right]=\max _{\omega} \int U\left(\boldsymbol{\omega}^{\prime} \mathbf{r}_{T+1}\right) p\left(\mathbf{r}_{T+1} \mid \mathcal{D}\right) \mathrm{d} \mathbf{r}_{T+1}$
-subject to $\boldsymbol{\omega}^{\prime} \mathbf{1}=1$</li>
-<li>Allows for custom utility functions and non-normality (skew, kurtosis)</li>
-<li><a href="https://jpwoeltjen.github.io/researchBlog/probabilistic%20programming/bayesian/portfolio%20optimization/2020/10/01/bayesian_porfolio_optimization.html">Portfolio Optimization within a Bayesian Framework</a></li>
+subject to $\boldsymbol{\omega}^{\prime} \mathbf{1}=1$.</li>
+<li>Allows for custom utility functions and non-normality (skew, kurtosis).</li>
+<li>
+<a href="https://jpwoeltjen.github.io/researchBlog/probabilistic%20programming/bayesian/portfolio%20optimization/2020/10/01/bayesian_porfolio_optimization.html">Portfolio Optimization within a Bayesian Framework</a>.</li>
 </ul>
 
 </div>
@@ -224,7 +235,12 @@ subject to $\boldsymbol{\omega}^{\prime} \mathbf{1}=1$</li>
 <p>Epistemic uncertainty is the uncertainty about the model -- uncertainty which can be explained away given enough data. By quantifying it we:</p>
 <ul>
 <li>Naturally adjust for parameter uncertainty of different models and/or assets (due to unequal amounts of data or otherwise weaker evidence).</li>
-<li>Naturally downscale portfolio allocations when a new data point is far away from training data (e.g. data anomalies, financial crises, regime shifts).</li>
+<li>
+<p>Naturally downscale portfolio allocations when a new data point is far away from training data (e.g. data anomalies, financial crises, regime shifts).</p>
+</li>
+<li>
+<p><a href="https://jpwoeltjen.github.io/researchBlog/bayesian/deep%20learning/2020/11/04/bayesian_uncertainty.html">On the Uncertainty Quantification of Deep Neural Networks</a>.</p>
+</li>
 </ul>
 </li>
 </ul>
@@ -294,13 +310,14 @@ subject to $\boldsymbol{\omega}^{\prime} \mathbf{1}=1$</li>
 <li>Bayesian model averaging doesn't select single model but computes average weighted with each model's <em>marginal posterior</em>: $$p(\theta \mid y)=\sum_{k=1}^{K} p\left(\theta \mid y, \mathcal{M}_{k}\right) p\left(\mathcal{M}_{k} \mid y\right)$$</li>
 <li>Bayesian Occam's Razor: the more parameters (with positive probability), the more the prior is spread over parameters (remember: it must integrate to 1) and the more unlikely the model becomes.</li>
 <li>
-<p>Problem: very sensitive to prior and hard to compute</p>
+<p>Problem: very sensitive to prior and hard to compute.</p>
 </li>
 <li>
 <p>Randomly initialized neural networks find different but equally performing local optima. A Bayesian model average is hence especially desirable for neural networks.</p>
 </li>
 <li>
-<p>Eliminates double descent (more parameters increase performance monotonically)</p>
+<p>Eliminates double descent (more parameters increase performance monotonically)
+.</p>
 </li>
 </ul>
 
@@ -351,6 +368,14 @@ subject to $\boldsymbol{\omega}^{\prime} \mathbf{1}=1$</li>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p>We want the model to automatically exclude features that aren't relevant and the predictions should be smooth. This helps generalization and also reduces transaction costs.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <ul>
 <li><a href="https://jpwoeltjen.github.io/researchBlog/bayesian/deep%20learning/feature%20selection/2020/11/09/bayesian_regularization.html">Bayesian Regularization of Deep Neural Networks</a></li>
 </ul>
@@ -364,17 +389,24 @@ subject to $\boldsymbol{\omega}^{\prime} \mathbf{1}=1$</li>
 <h1 id="Adaptiveness">
 <a class="anchor" href="#Adaptiveness" aria-hidden="true"><span class="octicon octicon-link"></span></a>Adaptiveness<a class="anchor-link" href="#Adaptiveness"> </a>
 </h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <ol>
-<li>Change point estimation</li>
-<li>Random walk priors<ul>
-<li>non-stationary data</li>
-<li><a href="https://jpwoeltjen.github.io/researchBlog/efficiency/time%20series/deep%20learning/2020/08/28/random_walk_deep_net_reg.html">Adaptive Bayesian Neural Network Based on Random Walk Priors</a></li>
+<li>Change point estimation.</li>
+<li>Random walk priors.<ul>
+<li>non-stationary data.</li>
+<li>
+<a href="https://jpwoeltjen.github.io/researchBlog/efficiency/time%20series/deep%20learning/2020/08/28/random_walk_deep_net_reg.html">Adaptive Bayesian Neural Network Based on Random Walk Priors</a>.</li>
 </ul>
 </li>
-<li>Optimal updating<ul>
-<li>$p\left(\theta \mid \mathcal{D}_{1}\right)=\frac{p\left(\mathcal{D}_{1} \mid \theta\right) p(\theta)}{\int p\left(\mathcal{D}_{1} \mid \theta\right) p(\theta) d \theta}$</li>
+<li>Optimal updating.<ul>
+<li>$p\left(\theta \mid \mathcal{D}_{1}\right)=\frac{p\left(\mathcal{D}_{1} \mid \theta\right) p(\theta)}{\int p\left(\mathcal{D}_{1} \mid \theta\right) p(\theta) d \theta}$.</li>
 <li>Set the prior to the previous posterior and recompute:
-$p\left(\theta \mid \mathcal{D}_{2}, \mathcal{D}_{1}\right)=\frac{p\left(\mathcal{D}_{2} \mid \theta\right) p\left(\theta \mid \mathcal{D}_{1}\right)}{\int p\left(\mathcal{D}_{2} \mid \theta\right) p\left(\theta \mid \mathcal{D}_{1}\right) d \theta}$</li>
+$p\left(\theta \mid \mathcal{D}_{2}, \mathcal{D}_{1}\right)=\frac{p\left(\mathcal{D}_{2} \mid \theta\right) p\left(\theta \mid \mathcal{D}_{1}\right)}{\int p\left(\mathcal{D}_{2} \mid \theta\right) p\left(\theta \mid \mathcal{D}_{1}\right) d \theta}$.</li>
 </ul>
 </li>
 </ol>
@@ -388,13 +420,23 @@ $p\left(\theta \mid \mathcal{D}_{2}, \mathcal{D}_{1}\right)=\frac{p\left(\mathca
 <h1 id="Flexibility">
 <a class="anchor" href="#Flexibility" aria-hidden="true"><span class="octicon octicon-link"></span></a>Flexibility<a class="anchor-link" href="#Flexibility"> </a>
 </h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li>Non-normality</li>
-<li>Heteroskedasticity</li>
-<li>Encode domain expertise via priors and other inductive biases.</li>
+<li>Non-normality.</li>
+<li>Heteroskedasticity.</li>
+<li>Encode domain expertise via priors and other inductive biases.<ul>
+<li><a href="https://jpwoeltjen.github.io/researchBlog/efficiency/hierarchical/deep%20learning/probabilistic%20programming/bayesian/panel/2020/08/28/hierarchical_bayesian_neural_network.html">Hierarchical Bayesian Neural Network for Efficient High-dimensional Asset Return Prediction.</a></li>
+</ul>
+</li>
 <li>Glueing together different components<ul>
-<li>Specify likelihood function via MV-GARCH or stochastic volatility models.</li>
-<li><a href="https://jpwoeltjen.github.io/researchBlog/efficiency/deep%20learning/time%20series/panel/2020/08/10/Efficient_estimation_of_predictive_models-using_high-frequency_high-dimensional_data.html">Efficient Estimation of Predictive Models using High-frequency High-dimensional Data</a></li>
+<li>Specify scale parameter of likelihood function via MV-GARCH or stochastic volatility models.</li>
+<li>
+<a href="https://jpwoeltjen.github.io/researchBlog/efficiency/deep%20learning/time%20series/panel/2020/08/10/Efficient_estimation_of_predictive_models-using_high-frequency_high-dimensional_data.html">Efficient Estimation of Predictive Models using High-frequency High-dimensional Data</a>.</li>
 </ul>
 </li>
 </ul>
